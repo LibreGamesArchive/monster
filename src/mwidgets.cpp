@@ -187,16 +187,16 @@ void mPrintf(BITMAP* bmp, int x, int y, int fore, int back, bool center,
 		}
 
 		if (center) {
-			textprintf_centre_ex(bmp, mFont, x, y-1, fore, back, text);
-			textprintf_centre_ex(bmp, mFont, x-1, y, fore, back, text);
-			textprintf_centre_ex(bmp, mFont, x+1, y, fore, back, text);
-			textprintf_centre_ex(bmp, mFont, x, y+1, fore, back, text);
+			textprintf_centre_ex(bmp, mFont, x, y-1, fore, back, "%s", text);
+			textprintf_centre_ex(bmp, mFont, x-1, y, fore, back, "%s", text);
+			textprintf_centre_ex(bmp, mFont, x+1, y, fore, back, "%s", text);
+			textprintf_centre_ex(bmp, mFont, x, y+1, fore, back, "%s", text);
 		}
 		else {
-			textprintf_ex(bmp, mFont, x, y-1, fore, back, text);
-			textprintf_ex(bmp, mFont, x-1, y, fore, back, text);
-			textprintf_ex(bmp, mFont, x+1, y, fore, back, text);
-			textprintf_ex(bmp, mFont, x, y+1, fore, back, text);
+			textprintf_ex(bmp, mFont, x, y-1, fore, back, "%s", text);
+			textprintf_ex(bmp, mFont, x-1, y, fore, back, "%s", text);
+			textprintf_ex(bmp, mFont, x+1, y, fore, back, "%s", text);
+			textprintf_ex(bmp, mFont, x, y+1, fore, back, "%s", text);
 		}
 
 		if (!useBitmapFont)
@@ -208,9 +208,9 @@ void mPrintf(BITMAP* bmp, int x, int y, int fore, int back, bool center,
 		}
 
 		if (center)
-			textprintf_centre_ex(bmp, mFont, x, y, fore, back, text);
+			textprintf_centre_ex(bmp, mFont, x, y, fore, back, "%s", text);
 		else
-			textprintf_ex(bmp, mFont, x, y, fore, back, text);
+			textprintf_ex(bmp, mFont, x, y, fore, back, "%s", text);
 	}
 	else {
 		if (!useBitmapFont)
@@ -222,9 +222,9 @@ void mPrintf(BITMAP* bmp, int x, int y, int fore, int back, bool center,
 		}
 
 		if (center)
-			textprintf_centre_ex(bmp, mFont, x, y, fore, back, text);
+			textprintf_centre_ex(bmp, mFont, x, y, fore, back, "%s", text);
 		else
-			textprintf_ex(bmp, mFont, x, y, fore, back, text);
+			textprintf_ex(bmp, mFont, x, y, fore, back, "%s", text);
 	}
 }
 
@@ -252,16 +252,16 @@ void mPrintf2(BITMAP* bmp, int x, int y, int fore, int back, bool center,
 		}
 
 		if (center) {
-			textprintf_centre_ex(bmp, mFont, x, y-1, fore, back, text);
-			textprintf_centre_ex(bmp, mFont, x-1, y, fore, back, text);
-			textprintf_centre_ex(bmp, mFont, x+1, y, fore, back, text);
-			textprintf_centre_ex(bmp, mFont, x, y+1, fore, back, text);
+			textprintf_centre_ex(bmp, mFont, x, y-1, fore, back, "%s", text);
+			textprintf_centre_ex(bmp, mFont, x-1, y, fore, back, "%s", text);
+			textprintf_centre_ex(bmp, mFont, x+1, y, fore, back, "%s", text);
+			textprintf_centre_ex(bmp, mFont, x, y+1, fore, back, "%s", text);
 		}
 		else {
-			textprintf_ex(bmp, mFont, x, y-1, fore, back, text);
-			textprintf_ex(bmp, mFont, x-1, y, fore, back, text);
-			textprintf_ex(bmp, mFont, x+1, y, fore, back, text);
-			textprintf_ex(bmp, mFont, x, y+1, fore, back, text);
+			textprintf_ex(bmp, mFont, x, y-1, fore, back, "%s", text);
+			textprintf_ex(bmp, mFont, x-1, y, fore, back, "%s", text);
+			textprintf_ex(bmp, mFont, x+1, y, fore, back, "%s", text);
+			textprintf_ex(bmp, mFont, x, y+1, fore, back, "%s", text);
 		}
 	}
 	else {
@@ -274,9 +274,9 @@ void mPrintf2(BITMAP* bmp, int x, int y, int fore, int back, bool center,
 		}
 
 		if (center)
-			textprintf_centre_ex(bmp, mFont, x, y, fore, back, text);
+			textprintf_centre_ex(bmp, mFont, x, y, fore, back, "%s", text);
 		else
-			textprintf_ex(bmp, mFont, x, y, fore, back, text);
+			textprintf_ex(bmp, mFont, x, y, fore, back, "%s", text);
 	}
 }
 
