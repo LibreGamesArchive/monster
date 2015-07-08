@@ -1,12 +1,12 @@
 CC=g++
 
 ifdef BUILD_EDITOR
-CFLAGS=-g -DEDITOR
+CFLAGS+=-g -DEDITOR
 else
-CFLAGS=-g -O2 -I/usr/include/lua5.1 -I../tgui-0.9
+CFLAGS+=-g -O2 -I/usr/include/lua5.1 -I../tgui-0.9
 endif
 
-LINKFLAGS=
+LINKFLAGS+=$(LDFLAGS)
 
 SRCS=\
 	animation.cpp\
