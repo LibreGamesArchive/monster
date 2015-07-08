@@ -3,7 +3,7 @@ CC=g++
 ifdef BUILD_EDITOR
 CFLAGS=-g -DEDITOR
 else
-CFLAGS=-g -O2 -I/usr/include/lua5.1
+CFLAGS=-g -O2 -I/usr/include/lua5.1 -I../tgui-0.9
 endif
 
 LINKFLAGS=
@@ -35,9 +35,15 @@ SRCS=\
 
 LIBOBJS=$(SRCS:.cpp=.o)
 
+SHARED?=0
 ALLEGROLIBS=`allegro-config --libs`
+ifeq ($(SHARED), 1)
+VORBISLIBS=-lvorbisfile -lvorbis -logg
+LIBS=-lfudgefont -lfreetype -lz -L../tgui-0.9 -ltgui -llua5.1 -llogg $(VORBISLIBS) $(ALLEGROLIBS)
+else
 VORBISLIBS=/usr/lib/libvorbisfile.a /usr/lib/libvorbis.a /usr/lib/libogg.a
-LIBS=-lfudgefont /usr/lib/libfreetype.a /usr/lib/libz.a -ltgui_a4 /usr/lib/liblua5.1.a -llogg $(VORBISLIBS) $(ALLEGROLIBS)
+LIBS=-lfudgefont /usr/lib/libfreetype.a /usr/lib/libz.a -L../tgui-0.9 -ltgui /usr/lib/liblua5.1.a -llogg $(VORBISLIBS) $(ALLEGROLIBS)
+endif
 
 default: monster
 
