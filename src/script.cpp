@@ -263,7 +263,7 @@ char* getItemSound(int id)
 	else {
 		lua_State* stack = currArea->getLuaState();
 		callLua(stack, "get_item_sound", "i>s", id+1);
-		snprintf(name, (sizeof(name)/sizeof(*name))-1, lua_tostring(stack, -1));
+		snprintf(name, (sizeof(name)/sizeof(*name))-1, "%s", lua_tostring(stack, -1));
 		lua_pop(stack, 1);
 		return name;
 	}
@@ -366,7 +366,7 @@ static int CAddObject(lua_State* stack)
 		currArea->addObject(o);
 	}
 	catch (std::bad_alloc e) {
-		debug_message("Error adding object at %d,%d\n", x, y);
+		debug_message("%s", "Error adding object at %d,%d\n", x, y);
 		if (o)
 			delete o;
 	}

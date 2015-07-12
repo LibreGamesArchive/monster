@@ -1,4 +1,5 @@
 #include <allegro.h>
+#include <stdio.h>
 
 #include "TGUI/tgui.h"
 #include "TGUI/awidgets.h"

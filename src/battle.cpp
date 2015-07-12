@@ -1321,7 +1321,7 @@ void Battle::applyTurn()
 							sprintf(result[i], "0");
 						}
 						else {
-							sprintf(result[i], currentSpell->apply(0, bs, defense, is_damage, c->isPlayer()));
+							sprintf(result[i], "%s", currentSpell->apply(0, bs, defense, is_damage, c->isPlayer()));
 						}
 						isDamage[i] = is_damage;
 						i++;
@@ -1342,7 +1342,7 @@ void Battle::applyTurn()
 					sprintf(result[0], "0");
 				}
 				else {
-					sprintf(result[0], currentSpell->apply(0, bs, defense, is_damage, c->isPlayer()));
+					sprintf(result[0], "%s", currentSpell->apply(0, bs, defense, is_damage, c->isPlayer()));
 				}
 				isDamage[0] = is_damage;
 				c = getCombatant(currentCombatant);
