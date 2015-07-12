@@ -1,5 +1,5 @@
 PREFIX=/usr/local
-FLAGS=
+CFLAGS+=
 INCLUDES=.
 
 all: lib examples
@@ -9,15 +9,15 @@ lib: tgui.o awidgets.o
 	ranlib libtgui.a
 
 tgui.o: tgui.cpp TGUI/tgui.h
-	g++ $(FLAGS) -I$(INCLUDES) -c tgui.cpp
+	g++ $(CFLAGS) -I$(INCLUDES) -c tgui.cpp
 
 awidgets.o: awidgets.cpp TGUI/awidgets.h
-	g++ $(FLAGS) -c awidgets.cpp
+	g++ $(CFLAGS) -c awidgets.cpp
 
 examples: awexamp
 
 awexamp: libtgui.a awexamp.cpp
-	g++ $(FLAGS) awexamp.cpp -o awexamp -L. -ltgui `allegro-config --libs`
+	g++ $(CFLAGS) awexamp.cpp -o awexamp -L. -ltgui `allegro-config --libs`
 
 install:
 	cp -r TGUI $(PREFIX)/include
